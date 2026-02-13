@@ -1,0 +1,47 @@
+<!-- 
+  EventFlow Loading Screen Snippet
+  Copy this code right after <body> tag in any HTML page
+-->
+
+<!-- Loading Screen -->
+<div id="loading-screen" class="loading-screen">
+  <div class="loading-content">
+    <div class="loading-brand">
+      <div class="brand-icon">
+        <svg viewBox="0 0 100 100" class="icon-svg">
+          <circle cx="50" cy="50" r="45" class="circle-bg"/>
+          <path d="M30 50 L45 65 L70 35" class="checkmark" stroke-dasharray="100" stroke-dashoffset="100"/>
+        </svg>
+      </div>
+      <h1 class="brand-name">
+        <span class="letter">E</span>
+        <span class="letter">v</span>
+        <span class="letter">e</span>
+        <span class="letter">n</span>
+        <span class="letter">t</span>
+        <span class="letter gradient">F</span>
+        <span class="letter gradient">l</span>
+        <span class="letter gradient">o</span>
+        <span class="letter gradient">w</span>
+      </h1>
+    </div>
+    <div class="loading-bar-container">
+      <div class="loading-bar">
+        <div class="loading-progress"></div>
+      </div>
+      <p class="loading-status">Initializing...</p>
+    </div>
+  </div>
+</div>
+
+<!-- 
+  Add this script before closing </body> tag:
+  <script src="js/loading.js"></script>
+  
+  The status text will automatically cycle through:
+  - Initializing...
+  - Loading resources...
+  - Almost ready...
+  - Finalizing...
+  - Ready!
+-->

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EventFlow — Event Management System</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- Loading Screen -->
+  <div id="loading-screen" class="loading-screen">
+    <div class="loading-content">
+      <div class="loading-brand">
+        <div class="brand-icon">
+          <svg viewBox="0 0 100 100" class="icon-svg">
+            <circle cx="50" cy="50" r="45" class="circle-bg"/>
+            <path d="M30 50 L45 65 L70 35" class="checkmark" stroke-dasharray="100" stroke-dashoffset="100"/>
+          </svg>
+        </div>
+        <h1 class="brand-name">
+          <span class="letter">E</span>
+          <span class="letter">v</span>
+          <span class="letter">e</span>
+          <span class="letter">n</span>
+          <span class="letter">t</span>
+          <span class="letter gradient">F</span>
+          <span class="letter gradient">l</span>
+          <span class="letter gradient">o</span>
+          <span class="letter gradient">w</span>
+        </h1>
+      </div>
+      <div class="loading-bar-container">
+        <div class="loading-bar">
+          <div class="loading-progress"></div>
+        </div>
+        <p class="loading-status">Initializing...</p>
+      </div>
+    </div>
+  </div>
+
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">Event<span>Flow</span></a>
+      <button type="button" class="nav-toggle" aria-label="Toggle menu">☰</button>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="create-event.html">Create Event</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <div class="nav-guest">
+          <a href="login.html" class="btn btn-ghost">Login</a>
+          <a href="register.html" class="btn btn-primary">Register</a>
+        </div>
+        <div class="nav-authed" style="display:none">
+          <a href="dashboard.html" class="btn btn-ghost">Dashboard</a>
+          <a href="profile.html" class="btn btn-ghost">Profile</a>
+          <span class="nav-user-name"></span>
+          <a href="#" class="btn btn-ghost" id="logout-btn">Logout</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <span class="hero-badge">Discover • Book • Attend</span>
+        <h1>Discover <span>events</span> that matter</h1>
+        <p>From conferences to workshops and meetups — find and book amazing events in one place.</p>
+        <div class="hero-actions">
+          <a href="events.html" class="btn btn-primary">Explore events</a>
+          <a href="create-event.html" class="btn btn-secondary" id="hero-create-btn">Create event</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Featured <span>events</span></h2>
+          <a href="events.html" class="btn btn-ghost">View all →</a>
+        </div>
+        <div id="featured-events" class="events-grid"></div>
+      </div>
+    </section>
+
+    <section class="section reviews-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">What our <span>users say</span></h2>
+          <p class="section-subtitle">Join thousands of satisfied event organizers and attendees</p>
+        </div>
+        <div class="reviews-grid">
+          <div class="review-card">
+            <div class="review-stars">⭐⭐⭐⭐⭐</div>
+            <p class="review-text">"EventFlow made organizing our tech conference incredibly easy. The booking system is intuitive and our attendees loved how simple it was to register!"</p>
+            <div class="review-author">
+              <div class="author-avatar">SK</div>
+              <div class="author-info">
+                <div class="author-name">Suman Karki</div>
+                <div class="author-role">Tech Conference Organizer</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-stars">⭐⭐⭐⭐⭐</div>
+            <p class="review-text">"I've attended multiple events through EventFlow. The platform is user-friendly and I always get instant booking confirmations. Highly recommended!"</p>
+            <div class="review-author">
+              <div class="author-avatar">PM</div>
+              <div class="author-info">
+                <div class="author-name">Priya Maharjan</div>
+                <div class="author-role">Event Enthusiast</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-stars">⭐⭐⭐⭐⭐</div>
+            <p class="review-text">"As a workshop facilitator, EventFlow has been a game-changer. I can track bookings, manage capacity, and communicate with attendees all in one place."</p>
+            <div class="review-author">
+              <div class="author-avatar">RT</div>
+              <div class="author-info">
+                <div class="author-name">Rajesh Thapa</div>
+                <div class="author-role">Workshop Facilitator</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-stars">⭐⭐⭐⭐⭐</div>
+            <p class="review-text">"The best event management platform in Nepal! Clean interface, reliable booking system, and excellent customer support. Our events have never been better organized."</p>
+            <div class="review-author">
+              <div class="author-avatar">AS</div>
+              <div class="author-info">
+                <div class="author-name">Anita Shrestha</div>
+                <div class="author-role">Event Coordinator</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-stars">⭐⭐⭐⭐⭐</div>
+            <p class="review-text">"I love how easy it is to discover new events in my area. The search and filter options are great, and booking tickets is just a few clicks away!"</p>
+            <div class="review-author">
+              <div class="author-avatar">BG</div>
+              <div class="author-info">
+                <div class="author-name">Bikash Gurung</div>
+                <div class="author-role">Regular Attendee</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-stars">⭐⭐⭐⭐⭐</div>
+            <p class="review-text">"EventFlow helped us manage our wedding reception seamlessly. From guest registration to capacity management, everything was perfect. Thank you!"</p>
+            <div class="review-author">
+              <div class="author-avatar">SD</div>
+              <div class="author-info">
+                <div class="author-name">Sita Dangol</div>
+                <div class="author-role">Wedding Organizer</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="reviews-stats">
+          <div class="stat-box">
+            <div class="stat-number">5,000+</div>
+            <div class="stat-label">Happy Users</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-number">10,000+</div>
+            <div class="stat-label">Events Hosted</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-number">50,000+</div>
+            <div class="stat-label">Tickets Booked</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-number">4.9/5</div>
+            <div class="stat-label">Average Rating</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <p>© 2025 EventFlow. Event Management System.</p>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="create-event.html">Create Event</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="profile.html">Profile</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+  <script>
+    // Hide create event button for non-admin users
+    (function() {
+      var createBtn = document.getElementById('hero-create-btn');
+      if (createBtn) {
+        var user = getCurrentUser ? getCurrentUser() : null;
+        if (!user || user.role !== 'admin') {
+          createBtn.style.display = 'none';
+        }
+      }
+    })();
+    
+    // Load featured events
+    (function () {
+      var events = typeof getEvents === 'function' ? getEvents() : [];
+      var container = document.getElementById('featured-events');
+      if (!container) return;
+      var list = events.slice(0, 4);
+      if (list.length === 0) {
+        container.innerHTML = '<div class="empty-state"><div class="empty-state-icon">📅</div><h3>No events yet</h3><p>Check back soon for exciting events!</p></div>';
+        return;
+      }
+      var placeholder = typeof DEFAULT_EVENT_IMAGE !== 'undefined' ? DEFAULT_EVENT_IMAGE : 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&h=400&fit=crop';
+      container.innerHTML = list.map(function (e) {
+        var imgSrc = e.image || placeholder;
+        return '<article class="event-card"><div class="event-card-image"><img src="' + imgSrc + '" alt="' + (e.title || 'Event') + '" loading="lazy"></div><div class="event-card-body"><div class="event-card-date">' + formatDate(e.date) + ' · ' + e.category + '</div><h2 class="event-card-title"><a href="event-detail.html?id=' + e.id + '">' + e.title + '</a></h2></div></article>';
+      }).join('');
+    })();
+  </script>
+  <script src="js/loading.js"></script>
+</body>
+</html>
